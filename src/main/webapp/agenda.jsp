@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/phone.png">
-    <title>Agenda</title>
+    <title>Agenda de contatos</title>
 </head>
 <body>
     <div class="container cont-agenda">
@@ -36,17 +36,18 @@
 	                    <tr>
 	                        <td><%=lista.get(i).getIdcon()%></td>                        
 	                        <td><%=lista.get(i).getNome()%></td>
-	                        <td>(<%=lista.get(i).getFone()%></td>
+	                        <td><%=lista.get(i).getFone()%></td>
 	                        <td><%=lista.get(i).getEmail()%></td>
 	                        <td>
-	                           <a href="main" class="btn btn-primary btn-sm">Editar</a>
-	                           <a href="main" class="btn btn-danger btn-sm">Deletar</a>
+								<a href="select?idcon=<%=lista.get(i).getIdcon()%>" class="btn btn-primary btn-sm">Editar</a>
+	                           	<a href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)" class="btn btn-danger btn-sm">Deletar</a>
 	                        </td>                        
 	                    </tr>
                    	<%}%>
                 </tbody>
-            </table>
+            </table>  
         </div>    
     </div>
+    <script src="scripts/confirmar.js"></script>
 </body>
 </html>
