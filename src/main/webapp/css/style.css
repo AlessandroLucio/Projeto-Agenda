@@ -1,0 +1,32 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.center{
+    height: 500px;
+    max-height: 500px;
+    
+}
+img{
+    height:150px;
+}
+h1{
+    font-size: 32px;
+}
+.btn-in{
+    font-size: 20px;
+}
+table{
+    width: 800px;
+}
+.cont-agenda{
+    max-width: 1040px;
+}
+.btn-tp{
+    margin: 7px;
+}
+input{
+    max-width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
