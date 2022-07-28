@@ -13,9 +13,9 @@
 <body>
 	<div class="container cont-novo">
         <h1>Editar contato</h1>
-	<form name="formContato" action="update" >
+	<form name="formContato" action="update">
 		<div>
-			<input type="text" name="id" class="form-control" readonly value="<%out.print(request.getAttribute("idcon"));%>">
+			<input type="text" name="idcon" class="form-control" readonly value="<%out.print(request.getAttribute("idcon"));%>">
             <input type="text" name="nome" class="form-control" value="<%out.print(request.getAttribute("nome"));%>">
             <input type="text" name="fone" class="form-control" value="<%out.print(request.getAttribute("fone"));%>">
             <input type="text" name="email" class="form-control" value="<%out.print(request.getAttribute("email"));%>">
