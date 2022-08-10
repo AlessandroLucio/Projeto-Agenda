@@ -1,14 +1,17 @@
-package model;
+package model.entities;
 
-public class JavaBeans {
-	 private String idcon;
+import java.io.Serializable;
+
+public class Contato implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private String idcon;
 	 private String nome;
 	 private String fone;
 	 private String email;
 	 
-	 public JavaBeans() {}
+	 public Contato() {}
 
-	public JavaBeans(String idcon, String nome, String fone, String email) {
+	public Contato(String idcon, String nome, String fone, String email) {
 		this.idcon = idcon;
 		this.nome = nome;
 		this.fone = fone;
@@ -45,5 +48,12 @@ public class JavaBeans {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Contato [idcon=" + idcon + ", nome=" + nome + ", fone=" + fone + ", email=" + email + "]";
 	} 
+	
+	
 }
