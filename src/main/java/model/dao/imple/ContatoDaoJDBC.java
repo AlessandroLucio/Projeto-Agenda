@@ -21,9 +21,9 @@ public class ContatoDaoJDBC implements ContatoDao{
 	}
 	
 	public ArrayList<Contato> listarContatos() {
+		
 		ArrayList<Contato> contatos = new ArrayList<>();
 		String read = "select * from contatos order by nome";
-		
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		
@@ -49,14 +49,14 @@ public class ContatoDaoJDBC implements ContatoDao{
 		}finally {
 			DB.closeStatement(pst);
 			DB.closeResultSet(rs);	
-			DB.closeConnection();
 		}
 	}
 
 	public void inserirContato(Contato contato) {
+		
 		String create = "insert into contatos (nome, fone, email) values(?,?,?)";
 		PreparedStatement pst = null;
-
+		
 		try {
 			conn = DB.getConnection();
 			pst = conn.prepareStatement(create);
@@ -71,11 +71,11 @@ public class ContatoDaoJDBC implements ContatoDao{
 			
 		}finally {
 			DB.closeStatement(pst);
-			DB.closeConnection();
 		}
 	}	
 
 	public void selecionarContato(Contato contato) {
+
 		String read2 = "select * from contatos where idcon = ?";
 		PreparedStatement pst = null;
 		
@@ -97,12 +97,12 @@ public class ContatoDaoJDBC implements ContatoDao{
 			
 		}finally {
 			DB.closeStatement(pst);
-			DB.closeConnection();
 		}
 	}
 
 	public void alterarContato(Contato contato) {
-		String update = "update contatos set nome=?, fone=?, email=? where idcon=?";
+		
+		String update = "update contatos set nome=?, fone=?, email=? where idcon=?";		
 		PreparedStatement pst = null;
 		
 		try {
@@ -121,12 +121,12 @@ public class ContatoDaoJDBC implements ContatoDao{
 			
 		}finally {
 			DB.closeStatement(pst);
-			DB.closeConnection();
 		}
 	}
 
 	public void deletarContato(Contato contato) {
-		String delete = "delete from contatos where idcon=?";
+		
+		String delete = "delete from contatos where idcon=?";		
 		PreparedStatement pst = null;
 		
 		try {
@@ -141,7 +141,6 @@ public class ContatoDaoJDBC implements ContatoDao{
 			
 		}finally {
 			DB.closeStatement(pst);
-			DB.closeConnection();
 		}
 	}
 }
